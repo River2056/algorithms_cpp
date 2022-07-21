@@ -6,14 +6,11 @@
 class Solution {
 public:
     std::vector<int> twoSum(std::vector<int>& nums, int target) {
-        std::vector<int> res;
         std::map<int, int> map;
         // std::vector<int>::iterator
         for (int i = 0; i < nums.size(); i++) {
             if (map.count(nums[i])) {
-                res.push_back(map[nums[i]]);
-                res.push_back(i);
-                return res;
+                return {map[nums[i]], i};
             }
             int diff = target - nums[i];
             map[diff] = i;
@@ -49,9 +46,16 @@ void test3() {
     s.printResult(s.twoSum(nums, 6));
 }
 
+void test4() {
+    Solution s;
+    std::vector<int> nums({1, 2, 3, 4, 5});
+    s.printResult(s.twoSum(nums, 10));
+}
+
 int main() {
     test();
     test2();
     test3();
+    test4();
     return 0;
 }
