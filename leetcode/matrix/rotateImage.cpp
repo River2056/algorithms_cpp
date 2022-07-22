@@ -48,6 +48,23 @@ public:
         printMatrix(matrix);
     }
 
+    void test2() {
+        vector<vector<int>> matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        cout << "before: " << endl;
+        printMatrix(matrix);
+
+        rotate(matrix);
+
+        cout << endl;
+        cout << "after: " << endl;
+        printMatrix(matrix);
+    }
+
 private:
     void printMatrix(vector<vector<int>>& matrix) {
         for (int i = 0; i < matrix.size(); i++) {
@@ -62,5 +79,7 @@ private:
 int main() {
     Solution s;
     s.test();
+    cout << endl;
+    s.test2();
     return 0;
 }
